@@ -21,10 +21,10 @@ class App extends Component {
   onSend() {
     fetch('http://localhost:8989/create-image',{
       method: 'POST',
-      body: this.state,
+      body: JSON.stringify(this.state),
     }).then(res => {
       res.json().then(value => {
-        alert(value.message);        
+        alert(value.message);
       })
     })
   }
